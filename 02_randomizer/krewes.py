@@ -1,4 +1,7 @@
 # Team Panda (Tania Cao and Weiwen Zhou)
+# SoftDev1 pd8
+# K2 -- NO-body expects the Spanish Inquisition!
+# 2018-09-11
 
 import random
 
