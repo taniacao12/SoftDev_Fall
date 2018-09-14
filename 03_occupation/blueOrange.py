@@ -1,3 +1,8 @@
+# BlueOrange (Tania Cao and Jack Lu)
+# SoftDev1 pd8
+# K6 -- StI/O: Divine your Destiny!
+# 2018-09-14
+
 import random
 
 def occupation (fileName):
