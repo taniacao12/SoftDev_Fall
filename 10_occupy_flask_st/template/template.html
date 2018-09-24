@@ -1,23 +1,26 @@
-<!DOCTYPE html>
 <html>
-  
-  <head>
-    <title> {{title}} </title>
-  </head>
-  
-  <body>
-    <p> Randomly-generated occupation: {{random}} </p>
-    
-    <br>
-    
-    <table>
-        {% for item in collection %}        
-        <tr>
-          <td> {{item}} </td>
-          <td> {{item[0]}} </td>
-        </tr>
-        {% endfor %}
-    </table>
-  </body>
-
+    <head>
+        <title>Occupations in the United States</title>
+    </head>
+    <body>
+        <h1> Occupations in the United States </h1>
+        <h4> Table of Job Classes and the percentage of the U.S workforce it comprises. </h4>
+        <p> Randomly Selected Occupation: p<b> {{occVal}} </b> </p>
+        <table style="border:1px solid black; padding:15px; border-spacing:10px; margin-left:auto; margin-right:auto">
+            <tr>
+                <th> <b> Job Class </b> </th>
+                <th> <b> Percentage </b> </th>
+            </tr>
+            {% for key, value in dict.items() %}
+            <tr>
+                <td> {{key}} </td>
+                <td> {{value}}% </td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td> <b> Total </b> </td>
+                <td> <b> 99.8% </b> </td>
+            </tr>
+        </table>
+    </body>
 </html>
