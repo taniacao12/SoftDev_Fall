@@ -16,7 +16,7 @@ def home():
 def occ():
     createDict()
     ranOcc = chooseOccupation(occPerDict,perSum) #randomly chosen occupation as a string
-    return render_template("occ_display.html",
+    return render_template("template.html",
                             occVal = ranOcc,
                             dict = occPerDict,
                             job = occ
