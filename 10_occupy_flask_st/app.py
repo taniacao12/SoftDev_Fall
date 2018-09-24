@@ -34,7 +34,7 @@ perSum = 0 #total sum of percentages of occupations, to be modified by createDic
 
 #creates the dictionary of occupation percentages to occPerDict, also established totalSum
 def createDict():
-    with open('occupations.csv') as csvfile:
+    with open('data/occupations.csv') as csvfile:
             reader = csv.DictReader(csvfile)
             # eliminates first row of csv file
             next(reader)
