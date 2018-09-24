@@ -1,3 +1,8 @@
+# Tania Cao
+# SoftDev1 pd8
+# K10 -- Jinja Tuning
+# 2018-09-23
+
 from flask import Flask, render_template
 import random
 import csv
