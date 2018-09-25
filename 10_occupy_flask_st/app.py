@@ -8,6 +8,7 @@ from flask import Flask,render_template
 
 app = Flask(__name__) #create instance of class Flask
 
+
 @app.route("/")
 def home():
     return "look at me,<br> <a href='/occupations'> go here </a>"
@@ -15,64 +16,52 @@ def home():
 @app.route("/occupations")
 def occ():
     createDict()
-    ranOcc = chooseOccupation(occPerDict,perSum) #randomly chosen occupation as a string
+    ranOcc = chooseOccupation(occPerDict,perSum) #ranOcc is randomly chosen occupation
     return render_template("occ_display.html",
                             occVal = ranOcc,
-                            dict = occPerDict,
-                            job = occ
+                            dict = occPerDict, #dict in html is OccPerDict
                             )
 
+occPerDict = {} #dictionary for occupations to percentage of U.S workforce is comprises
+perSum = 0 #total sum of percentages of occupations, to be modified by createDict(), will become 99.8
 
-#Write a Flask app with an "/occupations" route, which will generate an HTML page with an appropriate title,
-#a descriptive heading, and a table-ified version of the occupations data, along with a a randomly selected occupation shown at the top.
-#generate html file
-#
-#returns random occupation based on percent of likelihood
-
-occPerDict = {}
-perSum = 0 #total sum of percentages of occupations, to be modified by createDict()
-
-#creates the dictionary of occupation percentages to occPerDict, also established totalSum
+#creates the dictionary of occupation percentages as occPerDict, also establishes perSum
 def createDict():
     with open('occupations.csv') as csvfile:
             reader = csv.DictReader(csvfile)
-            # eliminates first row of csv file
-            next(reader)
             # loops through each row of csv file
             for row in reader:
                     # checks to see that the total isn't added to the dictionary
-                    #print (row['Job Class'])
                     if row['Job Class'] != "Total":
                            occPerDict[row['Job Class']] = float(row['Percentage'])
                     else:
                             global perSum
-                            perSum = float(row['Percentage'])
-                            #print (perSum)
+                            perSum = float(row['Percentage']) #the total percentage
 
 #chooses a random occupation based on the percentage, d is the dictionary, totalSum is total Sum of percentages
-def chooseOccupation(d,totalSum):
-        i = -1 #variable to match occupation with its respective weight
-        occ = d.keys()
-        weights = d.values()
+def chooseOccupation(occDict,totalSum):
+
+        occ = occDict.keys()
+        weights = occDict.values() #weight is the same as percentage
+
 
         # generating a random number float from 0 to the total sum of the weights
-        #print (total)
-        randWeight = float(random.randrange(0,(int)(perSum*100)))/100 #range from 0 to totalSum
-        #print (randWeight)
+        randWeight = random.uniform(0,perSum)
 
+        i = 0 #variable to match occupation with its respective weight
         for weight in weights:
                 #choosing the occupation if the randWeight created lies between the range of its weight.
-
                 randWeight -= weight
                 if randWeight <= 0:
                         break
                 i+=1
-                #print(i)
-        #print (i)
-        #print (len(list(weights)))
-        return list(occ)[i]
 
+        return list(occ)[i] # return random occupation
 
+#Algorithm: a random float from 0 to the total percentage is generated using random.uniform and assigned to randWeight
+#   use a for loop to iterate through the values of the dictionary (which represent the percentages or weights)
+#   subtract a weight from the randWeight and increase i by 1 in each loop. When randWeight reaches 0, the for loop is broken.
+#   return the occupation at index i from the list of occupations obtained from occDict.keys()
 
 if __name__ == "__main__":
     app.debug = True
