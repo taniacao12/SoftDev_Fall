@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Login!</title>
+</head>
+<body><br><center><form action="/auth" method="POST">
+  Username: <input type="text" name="username"><br>
+  Password: <input type="password" name="password"><br>
+  <button type ="submit">Login</button>
+</form>
+{% if session["error"] == 1 %}
+<p style="color: red">Username incorrect.</p>
+{% elif session["error"]== 2 %}
+<p style="color: red">Password incorrect.</p>
+{% endif %}
+</center>
+</body>
+</html>
