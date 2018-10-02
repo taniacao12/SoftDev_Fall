@@ -1,7 +1,7 @@
-# Tania Cao
+# Team FunnyPenguins (Tania Cao and Maryann Foley)
 # SoftDev1 pd8
-# K13 -- Echo Echo Echo 
-# 2018-09-27
+# K14 -- Do I Know You? 
+# 2018-10-01
 
 from flask import Flask, render_template, request, session, url_for, redirect
 import os, csv
