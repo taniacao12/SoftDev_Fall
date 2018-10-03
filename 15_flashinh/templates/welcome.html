@@ -1,0 +1,6 @@
+{% extends "template.html" %}
+{% block title %}Logged In{% endblock %}
+{% block body %}
+	<p>Your username is {{ session["uname"] }}.</p>
+	<a type="button" href={{ url_for('logout') }}>Logout</a>
+{% endblock %}
