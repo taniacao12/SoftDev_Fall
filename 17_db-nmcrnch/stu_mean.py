@@ -25,6 +25,12 @@ def searchGrades():
 def makeAvgTable():
     sumlist = {}
     courselist = {}
+
+    command = "DROP TABLE IF EXISTS peeps_avg"
+    c.execute(command)
+
+    command = "CREATE TABLE peeps_avg(id INTEGER, avg INTEGER)"
+    c.execute(command)
     
     #list of all marks per id
     command = "SELECT {0},{1} FROM {2},{3} WHERE {4} = {5}".format("peeps_info.id","mark","peeps_info","courses_info","peeps_info.id","courses_info.id")
