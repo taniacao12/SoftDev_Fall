@@ -1,0 +1,41 @@
+html {
+     margin:auto;
+     zoom:150%;
+}
+body{
+     background-color: #606065;
+}
+h1{
+  text-align: center;
+  background-color: grey;
+  color: white;
+}
+.content{
+  background-color: lightgrey;
+}
+.navbar , ul, h3{
+  padding-left: 7px;
+}
+ul{
+  list-style-type: none;
+  margin: 0.1;
+}
+a{
+  text-decoration: none;
+  color: grey;
+}
+.text{
+  overflow: hidden;
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  right: 4%;
+}
+.bopyright{
+  position: relative;
+  width: 100%;
+  text-align: right;
+  background-color: #535353;
+  color: grey;
+  height: 25px;
+}
