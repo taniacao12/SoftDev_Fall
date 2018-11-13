@@ -15,19 +15,199 @@
       <h1>Foundation Features</h1>
     </div>
 
-    <div class="top-bar">
-      <div class="top-bar-left">
-	<ul class="menu">
-          <li class="menu-text" data-magellan> Nav Bar </li>
-          <li><a href="#">Link One</a></li>
-	  <li><a href="#">Link Two</a></li>
-     	  <li><a href="#">Link Three</a></li>
-      <div class="top-bar-right">
-          <ul class="menu">
-            <li><input type="search" placeholder="Search"></li>
-            <li><button type="button" class="button">Search</button></li>
-          </ul>
-        </div>
+    <div class="grid-container">
+      <div class="top-bar">
+	<div class="top-bar-left">
+	  <ul class="menu">
+            <li class="menu-text" data-magellan> Nav Bar </li>
+            <li><a href="#">Link One</a></li>
+	    <li><a href="#">Link Two</a></li>
+     	    <li><a href="#">Link Three</a></li>
+	    <div class="top-bar-right">
+              <ul class="menu">
+		<li><input type="search" placeholder="Search"></li>
+		<li><button type="button" class="button">Search</button></li>
+              </ul>
+            </div>
+	</div>
       </div>
-</body>
+    </div>
+
+    <br>
+    
+    <div class="grid-container">
+      <h1>Grid System</h1>
+      Starting from full screen, try resizing the window so that it gets smaller and smaller. You will notice that the two paragraphs will shift from a 1:1 ratio to a 2:1 ratio to a 1:2 ratio. The left cell is 6/9/3 and the right cell is 6/3/9. The first number in both denotes the columns that each cell takes up out of 12 since 12 columns is the default and most optimal. So the left cell takes 6/12 and the right cell takes 6/12 when the window is large. The second number denotes what they do when the window is medium sized and the third number denotes what they do when the window is small sized. See line 47-59.
+      <br> <br>
+      <div class="grid-x grid-padding-x">
+	<div class="large-6 medium-9 small-3 cell">
+	  Cow paneer gouda. Squirty cheese cheese triangles fromage frais cheesy feet mozzarella airedale swiss cheesy grin. Cheesy grin caerphilly paneer edam squirty cheese manchego fromage frais roquefort. Swiss paneer blue castello say cheese camembert de normandie brie brie cheese on toast. Mozzarella.
+	</div>
+	<div class="large-6 medium-3 small-9 cell">
+	  Bavarian bergkase cheese triangles danish fontina. Ricotta cauliflower cheese squirty cheese cheesy feet parmesan halloumi jarlsberg paneer. Paneer goat cheeseburger squirty cheese feta cheese slices mascarpone cheese triangles. Everyone loves camembert de normandie cheese and wine pepper jack boursin cheesecake cheese slices manchego. Fromage chalk and cheese.
+	</div>
+      </div>
+    </div>
+    
+    <div class="grid-container">
+      <h1>Buttons</h1>
+      <h3>Coloring</h3>
+      <h5>Options: primary, secondary, success, alert, warning</h5>
+      Changes the button's color based on the class of button that is specified. See line 68-72
+      <br>
+      <button type="button" class="button primary">Primary</button>
+      <button type="button" class="button secondary">Secondary</button>            
+      <button type="button" class="button success">Success</button>
+      <button type="button" class="button alert">Alert</button>
+      <button type="button" class="button warning">Warning</button>
+      <br>
+      <h3>Sizing</h3>
+      <h5>Options: tiny, small, large, expanded</h5>
+      Changes the button's size based on the class of button that is specified. Expanded will change the width of the button to fill the entire container. See line 80-84
+      <br>
+      <button type="button" class="button tiny">Tiny</button>
+      <button type="button" class="button small">Small</button>            
+      <button type="button" class="button">Original</button>
+      <button type="button" class="button large">Large</button>
+      <button type="button" class="button expanded">Expanded</button>
+      <h3>Others</h3>         
+      <h5>Options: hollow, clear</h5>
+      Hollow creates a button without a background but with a border.<br> Clear creates a button without a background nor a border. <br> Disabled creates a button that looks like it is disabled; the disabled class must be added to actually disable it. See line 92-94
+      <br>
+      <button type="button" class="button hollow">Hollow</button>
+      <button type="button" class="button clear">Clear</button>
+      <button type="button" class="button disabled">Disabled</button>
+      <br>
+      Any combination of these classes can also be created:
+      <button type="button" class="button large expanded alert hollow disabled" disabled>Large Expanded Alert Hollow Disabled Button</button>
+    </div>
+
+    <div class="grid-container">
+      <h1>Callouts</h1>
+      Callouts are a type of container that creates a box and has styling features. They also have the color and sizing options that can be found with buttons except tiny, expanded, hollow and clear. See line 110-130
+      <div class="callout">
+        <h2>Heading</h2>
+        <p>hello world</p><a href="#">Link</a>
+      </div>
+      <div class="callout primary">Primary Callout</div>
+      <div class="callout secondary">Secondary Callout</div>
+      <div class="callout success">Success Callout</div>
+      <div class="callout alert">Alert Callout</div>
+      <div class="callout warning">Warning Callout</div>
+      <div class="callout small">Small Callout</div>
+      <div class="callout large">Large Callout</div>
+    </div>
+
+    <div class="grid-container">
+      <h1>Tables</h1>
+      This is how the default table looks like.
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>Height</th>
+            <th>Favorite Color</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Alpha</td>
+            <td>March 21, 2001</td>
+            <td>5'4"</td>
+            <td>Red</td>
+          </tr>
+          <tr>
+            <td>Beta</td>
+            <td>October 9, 2000</td>
+            <td>5'7"</td>
+            <td>Blue</td>
+          </tr>
+          <tr>
+            <td>Gamma</td>
+            <td>June 12, 2001</td>
+            <td>5'4"</td>
+            <td>Blue</td>
+          </tr>
+        </tbody>
+      </table>
+      This is a table with the class unstriped. The stripe pattern is removed from the table. See line 167
+      <table class="unstriped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>Height</th>
+            <th>Favorite Color</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Alpha</td>
+            <td>March 21, 2001</td>
+            <td>5'4"</td>
+            <td>Red</td>
+          </tr>
+          <tr>
+            <td>Beta</td>
+            <td>October 9, 2000</td>
+            <td>5'7"</td>
+            <td>Blue</td>
+          </tr>
+          <tr>
+            <td>Gamma</td>
+            <td>June 12, 2001</td>
+            <td>5'4"</td>
+            <td>Blue</td>
+          </tr>
+        </tbody>
+      </table>      
+      This is a table with the class hover. When the cursor hovers over a row, it is lightly darkened. See line 199
+      <table class="hover">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>Height</th>
+            <th>Favorite Color</th>
+          </tr>
+        </thead>
+      </table>
+      This is a table with the class hover. When the cursor hovers over a row, it is lightly darkened. See line 199
+      <table class="hover">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>Height</th>
+            <th>Favorite Color</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    
+    <div class="grid-container">
+      You can have embed contents in your website by wrapping your element with class "responsive-embed". See line 212
+      <div class="responsive-embed">
+	<iframe width="300" height="200" src="https://www.youtube.com/embed/cX-WVMjZ9L0" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    
+    <div class="grid-container">
+      Pagination is a way for users to click through page of search results. This function can be seen on Google or any search engine. See line 218
+      <nav aria-label="Pagination">
+	<ul class="pagination">
+	  <li class="pagination-previous">Previous <span class="show-for-sr">page</span></li>
+	  <li class="current"><span class="show-for-sr">You're on page</span> 1</li>
+	  <li><a href="#" aria-label="Page 2">2</a></li>
+	  <li><a href="#" aria-label="Page 3">3</a></li>
+	  <li><a href="#" aria-label="Page 4">4</a></li>
+	  <li class="ellipsis" aria-hidden="true"></li>
+	  <li><a href="#" aria-label="Page 12">12</a></li>
+	  <li><a href="#" aria-label="Page 13">13</a></li>
+	  <li class="pagination-next"><a href="#" aria-label="Next page">Next <span class="show-for-sr">page</span></a></li>
+	</ul>
+      </nav>
+    </div>    
+  </body>
 </html>
