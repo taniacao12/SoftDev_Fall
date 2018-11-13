@@ -1,0 +1,286 @@
+Northpoint
+Hui Min Wu
+Thomas Zhao
+Wei Wen Zhou
+Tania Cao Su
+pd 8
+---------------------
+Goldfish Storytelling - collaborative story telling websites 
+where verified users are able to contribute to a story, 
+only with the last edit of another contributor as the context. 
+A user can only contribute to a story once and can view the 
+entire story once it has contributed to it.
+
+
+ ______   ______   __   __   __       ______   _______     
+/_____/\ /_____/\ /_/\ /_/\ /_/\     /_____/\ /______/\    
+\:::_ \ \\::::_\/_\:\ \\ \ \\:\ \    \:::_ \ \\::::__\/__  
+ \:\ \ \ \\:\/___/\\:\ \\ \ \\:\ \    \:\ \ \ \\:\ /____/\ 
+  \:\ \ \ \\::___\/_\:\_/.:\ \\:\ \____\:\ \ \ \\:\\_  _\/ 
+   \:\/.:| |\:\____/\\ ..::/ / \:\/___/\\:\_\ \ \\:\_\ \ \ 
+    \____/_/ \_____\/ \___/_(   \_____\/ \_____\/ \_____\/ 
+==============================================================
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+
+weiwenZ -- 2018-10-15 21:30
+-------------------------------------------------------------
+created project repo and added design.pdf
+=============================================================
+weiwenZ -- 2018-10-16 23:28
+-------------------------------------------------------------
+updated design.pdf with feedback from peer review
+    0. Added additional features
+    1. Address links vs story text on landing page
+    2. Show the connections between database tables
+    3. Change edit count to timestamp for double functionality on the front and backend 
+       (Timestamp is more understandable than edit count).
+    4. Updated site map to make it clearer. 
+=============================================================
+weiwenZ -- 2018-10-16 23:47
+-------------------------------------------------------------
+0. Everyone should know, understand and agree on the every aspect of the design 
+regardless if you are working on that part or not. Communication is key.
+1. Develop incrementally rather than just putting together a bunch of code to just make it work
+2. Have files/functions/templates that do one thing very well instead of everything.
+=============================================================
+taniaC -- 2018-10-17 13:30
+-------------------------------------------------------------
+0. Created login.html, template.html, welcome.html and login route
+=============================================================
+huiminW -- 2018-10-17 14:05
+-------------------------------------------------------------
+0. Updated devlog to comply with formatting standards
+=============================================================
+huiminW -- 2018-10-18 12:10
+-------------------------------------------------------------
+Bug: Whenever you log out, the login page flashes, "Incorrect username"
+I tried to remedy this by adjusting the logic and cases but it did not work.
+I await class time to dicuss this matter with my group
+=============================================================
+thomasZ -- 2018-10-18 13:14
+-------------------------------------------------------------
+0. Created home.html and register.html
+1. Created the input and redirecting associated with these pages
+=============================================================
+taniaC -- 2018-10-18 13:38
+-------------------------------------------------------------
+0. Wrote register route and updated register.html
+=============================================================
+taniaC -- 2018-10-19 14:04
+-------------------------------------------------------------
+0. Updated register route
+=============================================================
+huiminW -- 2018-10-19 20:56
+-------------------------------------------------------------
+0. Realized that I forgot that I needed to open and close the connection
+to a database in the same method so I fixed said issue
+1. Removed our usage of fetchall and used for loop instead to
+get all the users and pwds from our database for authentification
+==============================================================
+thomasZ -- 2018-10-19 14:05
+-------------------------------------------------------------
+Created more template files for web page displaying (results, welcome, edit_template)
+==============================================================
+huiminW -- 2018-10-21 20:14
+-------------------------------------------------------------
+Create a user database and updated login function to read from
+database to verify user.
+=============================================================
+weiwenZ -- 2018-10-21 18:03
+-------------------------------------------------------------
+0. Remove user ID from users table and change editor in story 
+table to TEXT. Made adjustments to design.pdf
+1. Fix register to insert into the users in db
+2. Fix the error with flash where it flashes an error when you
+logout. 
+=============================================================
+thomasZ -- 2018-10-22 00:32
+-------------------------------------------------------------
+0. Created "create.html", "edit.html"
+1. Linked webpages together in basic manner
+2. Update gitignore
+3. Added more app.routes to "app.py"
+
+NOTE: One bug is that when invalid information is entered for register,
+the flash error goes to the login page instead.
+==============================================================
+huiminW -- 2018-10-22 0:57
+-------------------------------------------------------------
+0. Created backend method to create a story 
+1. Implemented a global variable to keep track of the number of stories that
+have been created.
+2. Renamed the create methods for accounts and stories
+=============================================================
+taniaC -- 2018-10-22 13:30
+-------------------------------------------------------------
+0. Wrote register route
+=============================================================
+huiminW -- 2018-10-22 13:49
+-------------------------------------------------------------
+0. Fixed minor syntax errors with creating a story
+=============================================================
+thomasZ -- 2018-10-22 14:02
+-------------------------------------------------------------
+Attempted to get jinja to display items from the database
+=============================================================
+huiminW -- 2018-10-22 20:28
+-------------------------------------------------------------
+0. Added method to display latest edit
+1. Added method to process edit from user
+2. Added method to display stories the user has editted
+3. Fixed errors for adding second new story to database
+
+NOTE: New methods added are not tested because frontend for
+those features have not been developed enough yet
+=============================================================
+thomasZ -- 2018-10-22 21:27
+-------------------------------------------------------------
+Made the stories in database table show; however contemplating
+different solutions for making the hyperlinks KNOW what story they
+represent
+=============================================================
+thomasZ -- 2018-10-23 00:52
+-------------------------------------------------------------
+I made the stories show on the welcome.html page in different categories,
+if they have been edited by user or not. Biggest issue I have is when I made them into hyperlinks,
+how do the hyperlinks convey identifying information so it can display correct story information?
+I was thinking query strings but it didn't work for some reason (QAF post).
+=============================================================
+taniaC -- 2018-10-23 13:40
+-------------------------------------------------------------
+0. Update results.html
+1. Update results --> contained an error that prevented the program from being runnable
+=============================================================
+teamN -- 2018-10-23 14:05
+-------------------------------------------------------------
+We helped Thomas with front end information passing using requests
+=============================================================
+thomasZ -- 2018-10-23 16:58
+-------------------------------------------------------------
+Went to the Dojo and there were some backend errors that I went over with Rayray-sunshine
+
+Note: in order for our thing to work, we need a pre-existing story in our
+database to add a story because story_id is a None-type otherwise
+
+Another note: also, if the db is deleted and you register,
+you cannot get to the welcome page after logging in because "no such table: stories"
+=============================================================
+huiminW -- 2018-10-23 18:19
+-------------------------------------------------------------
+0. Attempted a method that would grab the story title for editing but ultimately
+failed. Might have been because I used the same jinja variable twice.  
+=============================================================
+thomasZ -- 2018-10-23 19:39
+-------------------------------------------------------------
+0. The stories now properly display when their links are clicked on
+1. Viewing editted stories shows entire story history
+2. Viewing new stories only show latest addition
+=============================================================
+weiwenZ -- 2018-10-23 20:35
+-------------------------------------------------------------
+0. Updated README 
+1. Created a stories.csv to hold sample stories (Only single edits)
+2. Added tester.py (in util dir) to facilitate adding sample stories
+from csv to db 
+=============================================================
+weiwenZ -- 2018-10-23 21:00
+-------------------------------------------------------------
+0. Fix Thomas error regarding "no such table: stories"
+1. Started ONE PIG story. -ADD to the story about your day or anything 
+if stil exists.
+=============================================================
+huiminW -- 2018-10-24 13:25
+-------------------------------------------------------------
+0. Update the edit feature so passing the title doesn't return an error.
+Used a readonly input for display and retrieving title between functions.
+=============================================================
+huiminW and weiwenZ -- 2018-10-24 13:26
+-------------------------------------------------------------
+0. Typecasted the result from the query into an int so the
+number of stories can be incremented and stored correctly so no
+two stories have the same id.
+=============================================================
+taniaC -- 2018-10-24 14:05
+-------------------------------------------------------------
+0. Updated result route to make the program runnable with it
+=============================================================
+thomasZ -- 2018-10-24 18:31
+-------------------------------------------------------------
+Attempted to resolve some of the bugs discovered in class
+I was able to locate the source of (some) bugs but unable to implement a
+successful solution yet; comments have been placed in the code
+0. The "duplicate" story bug (meaning that it appears in editted and uneditted)
+is because the program cannot recognize that an edit entry in the table stories is
+NOT automatically a story; it's only part of the story (unless it's first element) --
+will need to make something to display only the first edit of any story as a hyperlink only
+
+1. The reason why editted stories still do not showcase the entire story is
+because for some reason, my putting other cursor.execute() commands wipes the
+variable containing the editors (lines 181 through 194 in app.py)
+
+2. I discovered the no-users issue but I don't think it's necessarily
+due to backspace like Weiwen speculated. I believe it's when you edit the code,
+the session updates and wipes itself but what's already RENDERED on the page
+doesn't go away so if you try to add a new story then, it'll have "no user"
+
+3. I made a "go back" button from story.html to welcome.html
+4. The story titles now display their original authors
+=============================================================
+weiwenZ -- 2018-10-24 21:00
+-------------------------------------------------------------
+0. Fix the error with searching for stories,/results. 
+Search is not case sensitive and only requires the search term
+to be in the title.
+Note: I did not close the db. I am not sure how to remedy it. 
+Backend peeps can you look into it.
+=============================================================
+taniaC -- 2018-10-25 13:50
+-------------------------------------------------------------
+0. Made final edit to search result route
+1. Added author to the search results (results.html) because different users may create
+   stories with the same story name
+=============================================================
+huiminW -- 2018-10-25 14:01
+-------------------------------------------------------------
+0. Implemented check so users dont input the same title 
+=============================================================
+taniaC -- 2018-10-25 14:05
+-------------------------------------------------------------
+0. Updated devlog.txt to include the work done in the first few coding days
+=============================================================
+huiminW -- 2018-10-25 16:16
+-------------------------------------------------------------
+0. Added more comments throughout the code and reorganized functions
+=============================================================
+thomasZ -- 2018-10-25 21:47
+-------------------------------------------------------------
+0. Moved the og_author(story_title) function from laptop to app.py
+1. Fixed story displaying code; stories should display most recent
+line when people have not contributed yet, should display entire
+story when they have
+2. Added go back hyperlink to "create story" page
+=============================================================
+thomasZ -- 2018-10-25 23:01
+-------------------------------------------------------------
+0. Discovered bug with displaying links to stories (fixed)
+1. Implemented editting section for non-editted stories
+2. Connected the front end of this editting section to backend
+=============================================================
+taniaC -- 2018-10-26 00:10
+-------------------------------------------------------------
+0. Update devlog.txt to match all work done in project
+=============================================================
+clydeS -- 2999-12-31 23:59
+-------------------------------------------------------------
+<Thing fristL did.> 
+=============================================================
+clydeS -- 2999-12-31 23:59
+-------------------------------------------------------------
+<Thing fristL did.> 
+=============================================================
+clydeS -- 2999-12-31 23:59
+-------------------------------------------------------------
+<Thing fristL did.> 
+=============================================================
+

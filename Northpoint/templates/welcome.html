@@ -1,0 +1,35 @@
+{% extends "template.html" %}
+{% block title %} | Welcome {% endblock %}
+{% block head %} Welcome {{ session["uname"] }}!{% endblock %}
+
+{% block body %}
+<form action="/results" methods=['GET']>
+  Search for stories:
+  <input type="text" name="search_term">
+  <button type="submit">Search</button>
+</form>
+  
+<hr>
+
+{# this link goes on to create a story #}
+<form action="/create_story" methods=['POST']>
+  <button type="submit">Start a new story!</button>
+</form>
+
+<hr>
+
+<p> Stories you've yet to contribute to </p>
+{% for entry in noeditstories %}
+<p> <a href="/story?title={{ entry[0] }}">{{ entry[0] }}</a> </p>
+{% endfor %}
+
+<hr>
+
+<p> Stories you've contributed to </p>
+{% for entry in stories %}
+<p> <a href="/story?title={{ entry[0] }}">{{ entry[0] }}</a> </p>
+{% endfor %}
+
+<hr>
+<a type="button" href={{ url_for('logout') }}>Logout</a>
+{% endblock %}

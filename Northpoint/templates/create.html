@@ -1,0 +1,25 @@
+{% extends "template.html" %}
+{% block head %} Create a story! {% endblock %}
+{% block title %} | Create {% endblock %}
+{% block body %}
+{% set msgs = get_flashed_messages() %}
+{% for msg in msgs %}
+<p style="color: red">{{msg}}</p>
+{% endfor %}
+<br>
+Please enter a story title:
+
+<form action="/input_story" method="POST">
+  <input type="text" name="story_title">
+
+  <br> <br> Please enter starting content for the story: <br>
+  
+  <textarea rows="20" cols="100" name="story_content"></textarea> <br>
+  <button type="submit">Start story!</button>
+</form>
+
+<br>
+
+<a href="/login">Go back</a>
+
+{% endblock %}
