@@ -1,0 +1,3 @@
+[submodule "Northpoint"]
+	path = Northpoint
+	url = https://github.com/wzhou2/Northpoint.git
