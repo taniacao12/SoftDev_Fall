@@ -7,9 +7,10 @@ def home():
     u = urllib.request.urlopen("https://api.nasa.gov/planetary/apod?api_key=JqCRPvo09gUFdEdfnYg8hzmV96jFWGkKqVSfHfZS")
     content = u.read()
     info = json.loads(content)
-    des = info["title"]
+    title = info["title"]
     img = info["url"]
-    return render_template("url.html", img = img, title = des)
+    des = info["explanation"]
+    return render_template("url.html", img = img, title = title, des = des)
 
 if __name__ == "__main__":
     app.debug = True
