@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> 25_rest </title>
+  </head>
+
+  <body>
+    <h1> Holidays </h1>
+    {% for each in content %}
+        <b> {{each["name"]}} </b>
+        <p> {{each["date"]}} <br> public: {{each["public"]}}</p>
+	{% endfor %}
+  </body>
+</html>
