@@ -3,15 +3,40 @@
   <head>
     <title> 26_rrreeesssttt </title>
   </head>
-
+  
   <body>
     <h1> Cat Facts </h1>
-		<p> Random Fact : {{fact}} </p>
-		<br>
-    {% for each in content %}
-        <b> {{each["breed"]}} </b>
-    <p> country : {{each["country"]}} <br>
-      origin: {{each["origin"]}}</p>
-		{% endfor %}
+    <p> Random Fact : {{ fact }} </p>
+    
+    <p> Random Breeds : </p>
+    <table border= 1>
+      <tr>
+	<th> breed </th>
+	<th> country </th>
+	<th> origin </th>
+	<th> coat </th>
+	<th> pattern </th>
+      </tr>
+      {% for each in breeds %}
+      <tr>
+        {% for data in each.values() %}
+        {% if data == "" %}
+        <td>None</td>
+        {%  else %}
+        <td>{{data}}</td>
+        {%  endif %}	
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </table>
+
+    <h1> Random Poems </h1>
+    <p> Title : <a href="{{ poem["url"] }}"> {{ poem["title"] }} </a>
+      <br> Author : <a href="{{ poem["poet"]["url"] }}"> {{ poem["poet"]["name"] }} </a></p>
+    <p> {{ poem["content"] }} </p>
+    
+    <h1> Random Advice Slip </h1>
+    <p> Slip ID : {{ advice["slip_id"] }} </p>
+    <p> Advice : {{ advice["advice"] }} </p>
   </body>
 </html>
