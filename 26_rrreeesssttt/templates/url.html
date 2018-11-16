@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> 26_rrreeesssttt </title>
+  </head>
+
+  <body>
+    <h1> Cat Facts </h1>
+		<p> Random Fact : {{fact}} </p>
+		<br>
+    {% for each in content %}
+        <b> {{each["breed"]}} </b>
+    <p> country : {{each["country"]}} <br>
+      origin: {{each["origin"]}}</p>
+		{% endfor %}
+  </body>
+</html>
