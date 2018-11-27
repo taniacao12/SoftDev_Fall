@@ -1,0 +1,28 @@
+<!DOCTYPE html><!--Basic template for all other pages -->
+<html>
+<head><!--Replaceable title/heading -->
+    {% block head %}
+    <title> {% block title %} Title {% endblock %}  </title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    {% endblock %}
+</head>
+<body><!--Replaceable body -->
+
+    {% set msgs = get_flashed_messages() %}
+        {% for each in msgs %}
+        <b>{{each}}</b>
+    {% endfor %}
+
+    {% block content %}
+    content
+    {% endblock %}
+
+    {% block footer %}<!--Copyright stuff -->
+    <br>
+    <br>
+    <br>
+    &copy; Copyright slowpokeRodriguez
+    {% endblock %}
+
+</body>
+</html>

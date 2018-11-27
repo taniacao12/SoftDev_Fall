@@ -1,4 +1,4 @@
-mulLimon_soda
+slowPokeRodriguez
 Tania Cao
 Johnson Li
 Hasif Ahmed
@@ -45,7 +45,12 @@ taniaC -- 2018-11-20 11:30
 --------------------------------------------------------------
 0. updated devlog
 ==============================================================
-fristL -- TIMESTAMP
+johnsonL -- 2018-11-26 14:04
 --------------------------------------------------------------
-<Thing fristL did.>
+0. Added templates: base.html, home.html, login.html
+1. Added routes: root, login, and auth
+==============================================================
+mohtasimH -- 2018-11-27 2:00
+--------------------------------------------------------------
+0. Updated design doc with further clarification of the roles and added more explanations of database, component map, and sitemap,   specifically on all of the pages that are accessible to the logged in user.
 ==============================================================
