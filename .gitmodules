@@ -1,3 +1,6 @@
 [submodule "Northpoint"]
 	path = Northpoint
 	url = https://github.com/wzhou2/Northpoint.git
+[submodule "slowpokeRodriguez"]
+	path = slowpokeRodriguez
+	url = https://github.com/taniacao12/slowpokeRodriguez.git
