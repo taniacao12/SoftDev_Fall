@@ -4,3 +4,6 @@
 [submodule "slowpokeRodriguez"]
 	path = slowpokeRodriguez
 	url = https://github.com/taniacao12/slowpokeRodriguez.git
+[submodule "supercalifragilisticexpialidocious"]
+	path = supercalifragilisticexpialidocious
+	url = https://github.com/Soojin-C/supercalifragilisticexpialidocious
