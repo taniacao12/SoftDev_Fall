@@ -3,7 +3,7 @@
 	url = https://github.com/wzhou2/Northpoint.git
 [submodule "slowpokeRodriguez"]
 	path = slowpokeRodriguez
-	url = https://github.com/taniacao12/slowpokeRodriguez.git
+	url = https://github.com/taniacao12/slowpokeRodriguez
 [submodule "supercalifragilisticexpialidocious"]
 	path = supercalifragilisticexpialidocious
 	url = https://github.com/Soojin-C/supercalifragilisticexpialidocious
